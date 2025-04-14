@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年04月14日05:09:46
-# 数量: 87650条
+# 更新: 2025年04月15日05:10:02
+# 数量: 87649条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,s8.001fzc.com
@@ -62156,7 +62156,6 @@ DOMAIN-SUFFIX,qishituan.top
 DOMAIN-SUFFIX,mo.qitouch.cn
 DOMAIN-SUFFIX,qituduwios.com
 DOMAIN-SUFFIX,qiubang.org
-DOMAIN-SUFFIX,stats.qiumibao.com
 DOMAIN-SUFFIX,webstat.qiumibao.com
 DOMAIN-SUFFIX,t.qiuqiuqipai.com
 DOMAIN-SUFFIX,fzb01.qiushibaike.com
