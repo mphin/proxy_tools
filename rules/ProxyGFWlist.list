@@ -57,7 +57,8 @@ DOMAIN-SUFFIX,adtidy.org
 # 域名服务
 DOMAIN-SUFFIX,godaddy.com
 
-# VPN相关
+# vpn相关
+DOMAIN-SUFFIX,nutsfind.com
 DOMAIN-SUFFIX,bajie.one
 DOMAIN-SUFFIX,bajie.run
 DOMAIN-SUFFIX,bajie.wiki
