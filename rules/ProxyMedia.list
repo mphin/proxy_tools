@@ -108,6 +108,8 @@ DOMAIN-SUFFIX,njav.tv
 DOMAIN-SUFFIX,fivetiu.com
 DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,missav.ws
+# > 2048
+DOMAIN-SUFFIX,hjd2048.com
 
 # Emby
 # > Misty
