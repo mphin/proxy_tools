@@ -1,0 +1,19 @@
+/*
+插件引用https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/1.1.1.1.plugin
+*/
+#!name = 1.1.1.1配置管理
+#!desc = 提取1.1.1.1应用的配置并生成Loon可用的节点配置，点击下面署名前往配置1.1.1.1的BoxJs配置。
+#!openUrl = https://itunes.apple.com/app/id1423538627
+#!author = VirgilClyne I-am-R-E
+#!homepage = http://boxjs.com/#/app/Cloudflare.1dot1dot1dot1
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/1.1.1.1/icon/1.1.1.1.png
+#!date = 2024-07-17 04:19:03
+
+[Script]
+http-request ^https?:\/\/(api|zero-trust-client)\.cloudflareclient\.com\/(.*)\/reg\/[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/1.1.1.1/script/1.1.1.1.request.js, requires-body = true, tag = WARP Personal Request
+http-response ^https?:\/\/(api|zero-trust-client)\.cloudflareclient\.com\/(.*)\/reg\/[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/1.1.1.1/script/1.1.1.1.response.js, requires-body = true, tag = WARP Personal Response
+http-request ^https?:\/\/(api|zero-trust-client)\.cloudflareclient\.com\/(.*)\/reg\/t\.[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/1.1.1.1/script/1.1.1.1.request.js, requires-body = true, tag = WARP Teams Request
+http-response ^https?:\/\/(api|zero-trust-client)\.cloudflareclient\.com\/(.*)\/reg\/t\.[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/1.1.1.1/script/1.1.1.1.response.js, requires-body = true, tag = WARP Teams Response
+
+[Mitm]
+hostname = api.cloudflareclient.com, zero-trust-client.cloudflareclient.com

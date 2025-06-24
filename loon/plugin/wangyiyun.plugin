@@ -1,0 +1,16 @@
+#!name = 网易云音乐解锁
+#!desc = 共享会员用的人多会崩溃，此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
+#!date = 2024-07-31 04:18:11
+
+[Script]
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/playermode\/ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 播放器会员皮肤
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/search\/complex\/(page|rec\/song\/get) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 搜索结果会员歌曲
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/v3\/song\/detail script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 播放器会员歌曲
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/song\/(chorus|enhance\/|play\/|type\/detail\/get) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 播放器会员歌曲
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/(v1\/artist\/top\/song|v3\/discovery\/recommend\/songs) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 播放器会员歌曲
+http-request ^https:\/\/interface.+music\.163\.com\/eapi\/vipnewcenter\/app\/resource\/newaccountpage script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 侧边栏会员等级
+http-request ^https?:\/\/interface.+music\.163\.com\/eapi\/(homepage\/|v6\/)?playlist\/ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 首页歌单会员歌曲
+http-request ^https?:\/\/interface.+music\.163\.com\/eapi\/vipauth\/app\/auth\/(soundquality\/)?query script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/wangyiyun/script/wangyiyun.js, tag = 会员认证
+
+[Mitm]
+hostname = *music.163.com

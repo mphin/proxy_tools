@@ -1,0 +1,17 @@
+#!name = 酷我音乐&畅听解锁
+#!desc = 〔 酷我音乐&酷我畅听 〕全功能破解
+#!openUrl = https://napi.ltd
+#!author = 影子
+#!homepage = https://napi.ltd
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/kuwo/icon/kuwo.png
+#!date = 2024-08-05 04:20:25
+
+[Rule]
+USER-AGENT,KWPlayer*,PROXY
+DOMAIN-SUFFIX,kuwo.cn,PROXY
+
+[Script]
+http-response ^(?!.*(img|anymatch)).*?kuwo\.cn(/vip|/openapi)?(/enc|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/(adBar|-myRec/vipMusic-)|app/newMenuList/menuListInfo|tingshu/index/radio)|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|\?op\=getvip|.*?ptype\=vip)|/mobi\.s\?f\=kwxs|/music\.pay\?newver\=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/kuwo/script/kuwo.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://file.napi.ltd/Static/Image/KuWo.png
+
+[Mitm]
+hostname = *.kuwo.cn

@@ -1,0 +1,10 @@
+#!name=Fix MeiTuan DNS issue
+#!desc=Fix MeiTuan DNS issue.
+[General]
+always-raw-tcp-hosts = %INSERT% -route-stats.d.meituan.net, -metrics-picture.d.meituan.net, -maplocatesdksnapshot.d.meituan.net
+[URL Rewrite]
+http(s)?://route-stats.d.meituan.net(.*)? http$1://route-stats.dreport.meituan.net$2 302
+http(s)?://metrics-picture.d.meituan.net(.*)? http$1://metrics-picture.dreport.meituan.net$2 302
+http(s)?://maplocatesdksnapshot.d.meituan.net(.*)? http$1://maplocatesdksnapshot.dreport.meituan.net$2 302
+[MITM]
+hostname = %INSERT% route-stats.d.meituan.net, metrics-picture.d.meituan.net, maplocatesdksnapshot.d.meituan.net

@@ -1,0 +1,16 @@
+/*
+插件引用https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Google.plugin
+*/
+#!name = Google重定向
+#!desc = 将Google搜索重定向至.com域名，如遇频繁跳转请禁用本插件。
+#!author = 可莉🅥
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/google_redirect/icon/google_redirect.png
+#!date = 2024-07-27 04:22:07
+
+[Rewrite]
+^https?:\/\/(www.)?(g|google)\.cn 302 https://www.google.com
+^https?:\/\/(ditu|maps).google\.cn 302 https://maps.google.com
+
+[Mitm]
+hostname = www.google.cn

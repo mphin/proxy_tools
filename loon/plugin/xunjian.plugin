@@ -1,0 +1,9 @@
+#!name = 寻简解锁
+#!desc = 非一次性解锁，支持无水印下载保存，部分功能自测，此插件仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
+#!date = 2024-04-08 02:03:08
+
+[Script]
+http-response https:\/\/api\.mindyushu\.com\/user\/(get-apple-member|me|storage-info) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/xunjian/script/xunjian.js, requires-body = true, tag = 寻简解锁
+
+[Mitm]
+hostname = api.mindyushu.com

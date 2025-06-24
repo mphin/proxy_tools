@@ -1,0 +1,307 @@
+name: Plugin_update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 20 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+      - 'loon/plugin/**'
+jobs:
+  Plugin_update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up time zone
+      run: sudo timedatectl set-timezone Asia/Shanghai
+
+    - name: Checkout repository
+      uses: actions/checkout@main
+      
+    - name: Get last commit files
+      if: github.event_name == 'push'
+      id: last_commit
+      run: |
+         echo "sha=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+    - name: Get changed files
+      if: github.event_name == 'push'
+      id: file_conf
+      run: |
+        COMMIT=${{ env.sha }}
+        URL="https://api.github.com/repos/${{ github.repository }}/compare/${COMMIT}^...${COMMIT}"
+        conf_File=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL | jq -r '.files[] | select(.filename | test("^scripts/.*\\.conf$")) | .filename' | tr '\n' ' ')
+        echo "conf_File=${conf_File}" >> $GITHUB_OUTPUT
+          
+    - name: Update Plugin
+      run: |
+        script_folder="scripts" #存放配置和脚本目录
+        loon_plugin_folder="loon/plugin" #存放生成Loon插件目录
+        base_url="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/${GITHUB_REF##*/}/"
+        current_year=$(date +'%Y')
+        current_date=$(date "+%Y-%m-%d %H:%M:%S")
+        previous_year_1=$((current_year - 1))
+        previous_year_2=$((current_year - 2))
+        echo 'user_agent = "Loon/699 CFNetwork/1496.0.7 Darwin/23.5.0"' >> ~/.wgetrc
+        mkdir -p "$script_folder" "$script_folder" "$loon_plugin_folder" tmp
+        
+        extract_value() {
+            grep -i "$1" "$2" | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/%0D//'
+        }
+        
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            conf_File=($(find "$script_folder" -name '*.conf'))
+        else
+            conf_File="${{ steps.file_conf.outputs.conf_File }}" && IFS=' ' read -r -a conf_File <<< "$conf_File"
+            [ ${#conf_File[@]} -eq 0 ] && conf_File=($(find "$script_folder" -name '*.conf'))
+        fi
+        for conf_file in "${conf_File[@]}"; do
+            if [ -e "$conf_file" ]; then
+                remote_url=$(extract_value "^remote_url" $conf_file)
+                script_name=$(extract_value "^script_name" $conf_file)
+                [ -z "$script_name" ] && script_name=$(basename "$remote_url" | sed 's/\.[^.]*$//' | awk '{print tolower($0)}')
+                if [[ $remote_url == http* ]]; then
+                    download_file="$script_folder/$script_name/files/$(basename "$remote_url" | awk '{print tolower($0)}')"
+                    mkdir -p "$script_folder/$script_name/files/" && wget -O "$download_file" "$remote_url" --tries=2
+                
+                    name=$(extract_value "^#!name" $conf_file)
+                    [ -z "$name" ] && name=$(extract_value "^#!name" $download_file)
+                    [ -z "$name" ] && name=$script_name
+                
+                    desc=$(extract_value "^#!desc" $conf_file)
+                    [ -z "$desc" ] && desc=$(extract_value "^#!desc" $download_file)
+                    [ -z "$desc" ] && desc="仅供学习和个人使用，不得用于商业目的或其他非法用途"
+                
+                    openurl=$(extract_value "^#!openUrl" $conf_file)
+                    [ -z "$openurl" ] && openurl=$(extract_value "^#!openUrl" $download_file)
+                
+                    author=$(extract_value "^#!author" "$conf_file")
+                    [ -z "$author" ] && author=$(extract_value "^#!author" "$download_file")
+                
+                    homepage=$(extract_value "^#!homepage" $conf_file)
+                    [ -z "$homepage" ] && homepage=$(extract_value "^#!homepage" $download_file)
+                
+                    icon=$(extract_value "^#!icon" $conf_file)
+                    [ -z "$icon" ] && icon=$(extract_value "^#!icon" $download_file)
+                
+                    select=$(extract_value "^#!select" $conf_file)
+                    [ -z "$select" ] && select=$(extract_value "^#!select" $download_file)
+                
+                    input=$(extract_value "^#!input" $conf_file)
+                    [ -z "$input" ] && input=$(extract_value "^#!input" $download_file)
+                
+                    date=$(extract_value "^#!date" $conf_file)
+                    [ -z "$date" ] && date=$(awk '/\/\*/,/\*\// || /#/' "$download_file" | grep -oEm 1 "$current_year[-/年.][[:digit:]]{1,2}[-/年.][[:digit:]]{1,2}|$previous_year_1[-/年.][[:digit:]]{1,2}[-/年.][[:digit:]]{1,2}|$previous_year_2[-/年.][[:digit:]]{1,2}[-/年.][[:digit:]]{1,2}" || extract_value "^#!date" $download_file)
+                    [ -z "$date" ] && { date="$current_date"; grep -q '^#!date' "$conf_file" && sed -i "s/^#!date.*/#!date = $current_date/" "$conf_file" || echo -e "\n#!date = $current_date" >> "$conf_file"; }
+                    date=$(echo "$date" | sed 's/[\/年.]/-/g; /[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} [0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\}/! s/$/ 00:00:00/')
+                    
+                    mkdir -p "tmp/$loon_plugin_folder/"
+                    plugin_file="tmp/$loon_plugin_folder/$script_name.plugin"
+                    [[ "$remote_url" == *.plugin ]] && echo -e "/*\n插件引用"$remote_url"\n*/" > "$plugin_file"
+                    echo "#!name = $name" >> "$plugin_file"
+                    echo "#!desc = $desc" >> "$plugin_file"
+                    [ -n "$openurl" ] && echo "#!openUrl = $openurl" >> "$plugin_file"
+                    [ -n "$author" ] && echo "#!author = $author" >> "$plugin_file"
+                    [ -n "$homepage" ] && echo "#!homepage = $homepage" >> "$plugin_file"
+                    if [ -n "$icon" ]; then
+                        icon_file="$script_folder/$script_name/icon/$script_name.png"
+                        [ ! -e "$icon_file" ] && mkdir -p "$script_folder/$script_name/icon" && wget -O "$icon_file" "$icon" --tries=2
+                        echo "#!icon = $base_url$icon_file" >> "$plugin_file"
+                    fi
+                    [ -n "$select" ] && echo "$select" | sed 's/^/#!select = /' >> "$plugin_file"
+                    [ -n "$input" ] && echo "$input" | sed 's/^/#!input = /' >> "$plugin_file"
+                    echo "#!date = $date" >> "$plugin_file"
+
+                    mitm=$(grep -i "^hostname" $conf_file | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/%0D//; s/,$//; s/,\([^ ]\)/, \1/g')
+                    [ -z "$mitm" ] &&mitm=$(grep -i "^hostname" $download_file | awk -F '=' '{print $2}' | sed 's/^[[:space:]]*//; s/[[:space:]]*$//; s/%0D//; s/,$//; s/,\([^ ]\)/, \1/g' | sed 's/%INSERT% //; s/%APPEND% //')
+                    script=$(sed -n '/\[Script\]/,/^\[/p' "$conf_file" | sed '/^\[/d; /^[[:space:]]*$/d')
+                    [ -z "$script" ] && script=$(sed -n '/\[Script\]/,/^\[/p;/\[rewrite_local\]/,/^\[/p' "$download_file" | sed '/^\[/d; /^[[:space:]]*$/d')
+                    rewrite=$(sed -n '/\[Rewrite\]/,/^\[/p' "$conf_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    [ -z "$rewrite" ] && rewrite=$(sed -n '/\[.*Rewrite\]/,/^\[/p' "$download_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    general=$(sed -n '/\[General\]/,/^\[/p' "$conf_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    [ -z "$general" ] && general=$(sed -n '/\[General\]/,/^\[/p' "$download_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d' | sed '/always-raw-tcp-hosts/d')
+                    rule=$(sed -n '/\[Rule\]/,/^\[/p' "$conf_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    [ -z "$rule" ] && rule=$(sed -n '/\[Rule\]/,/^\[/p' "$download_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    host=$(sed -n '/\[Host\]/,/^\[/p' "$conf_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    [ -z "$host" ] && host=$(sed -n '/\[Host\]/,/^\[/p' "$download_file" | sed '/^\[/d; /^[[:space:]]*$/d; /^#/d')
+                    reject=$(echo "$script" | awk '/ reject/ {print}' | sed 's/url reject/reject/g')
+                
+                    [ -n "$reject" ] && [ -n "$rewrite" ] && rewrite=$(printf "%s\n%s" "$rewrite" "$reject") ; script=$(echo "$script" | sed '/ reject/d')
+                    [ -n "$reject" ] && [ -z "$rewrite" ] && rewrite="$reject" ; script=$(echo "$script" | sed '/ reject/d')
+                    [ -n "$general" ] && echo -e "\n[General]\n$general" >> "$plugin_file"
+                    [ -n "$rewrite" ] && echo -e "\n[Rewrite]\n$rewrite" >> "$plugin_file"
+                    [ -n "$host" ] && echo -e "\n[Host]\n$host" >> "$plugin_file"
+                    [ -n "$rule" ] && echo -e "\n[Rule]\n$rule" >> "$plugin_file"
+                    [ -n "$script" ] && echo -e "\n[Script]\n$script" >> "$plugin_file"
+                    [ -n "$mitm" ] && echo -e "\n[Mitm]\nhostname = $mitm" >> "$plugin_file"
+                
+                    # http-response
+                    sed -i '/script-response-body/ s/^/http-response /' "$plugin_file"
+                    sed -i '/script-response-body/ s/$/, requires-body = true, tag =/' "$plugin_file"
+                    sed -i 's/url script-response-body/script-path =/' "$plugin_file"
+
+                    # http-request
+                    sed -i '/script-request-\(header\|body\)/ s/^/http-request /' "$plugin_file"
+                    sed -i '/script-request-header/ s/$/, tag =/' "$plugin_file"
+                    sed -i '/script-request-body/ s/$/, requires-body = true, tag =/' "$plugin_file"
+                    sed -i 's/url script-request-\(header\|body\)/script-path =/' "$plugin_file"
+
+                    #tag=
+                    for keyword in 'http-response' 'http-request'; do
+                        line_numbers=$(grep -n "$keyword" "$plugin_file" | cut -d: -f1)
+                        for line_number in $line_numbers; do
+                            if [ "$line_number" ]; then
+                                current_line=$(sed -n "${line_number}p" "$plugin_file")
+                                if [[ "$current_line" =~ [=]$ || "$current_line" =~ [=][[:space:]]$ ]]; then
+                                    previous_line_number=$((line_number - 1))
+                                    previous_line=$(sed -n "${previous_line_number}p" "$plugin_file")
+                                    if [[ "$previous_line" == "#"* ]]; then
+                                        comment_value=$(echo "$previous_line" | sed 's/^# *//; s/^> *//')
+                                        sed -i -e "${line_number}s/$/ $comment_value/" "$plugin_file"
+                                    else
+                                        name_value=$(echo "$previous_line" | grep -o 'tag = [^ ]*' | sed 's/tag = //')
+                                        [ -z "$name_value" ] && name_value=$name
+                                        sed -i -e "${line_number}s/$/ $name_value/" "$plugin_file"
+                                    fi
+                                fi
+                            fi
+                        done
+                    done
+                    sed -i '/^# /d' "$plugin_file"
+
+                    # script下载
+                    mkdir -p "tmp/$script_folder/$script_name/script" "$script_folder/$script_name/script"
+                    while IFS= read -r line; do
+                      if [[ "$line" == *"script-path"* ]]; then
+                        script_download_url=$(echo "$line" | sed -n 's/^.*script-path\s*=\s*\([^,]*\).*$/\1/p')
+                        script_basename=$(basename "$script_download_url" | awk '{print tolower($0)}')
+                        script_tmp_path="tmp/$script_folder/$script_name/script/$script_basename"
+                        script_folder_path="$script_folder/$script_name/script/$script_basename"
+                        wget -O "$script_tmp_path" "$script_download_url" --tries=2
+                        if head -n 5 "$script_tmp_path" | awk '/来源|引用/ && /http/ {exit 1}'; then
+                            sed -i '1i\/*\n脚本引用'"$script_download_url"'\n*/' "$script_tmp_path"
+                        fi
+                        # 对比script内容更新date值
+                        if [ -f "$script_tmp_path" ] && [ -f "$script_folder_path" ]; then
+                            if ! cmp -s "$script_tmp_path" "$script_folder_path"; then
+                                sed -i "s/#!date.*/#!date = $current_date/" "$plugin_file"
+                                grep -q '^#!date' "$conf_file" && sed -i "s/^#!date.*/#!date = $current_date/" "$conf_file" || echo -e "\n#!date = $current_date" >> "$conf_file"
+                            fi
+                        fi
+                        full_url="$base_url$script_folder_path"
+                        sed -i "s#$(echo "$script_download_url" | sed 's/[&/\]/\\&/g')#$full_url#" "$plugin_file"
+                        mv -f "$script_tmp_path" "$script_folder_path"
+                      fi
+                    done < "$plugin_file"
+
+                    # 规范文件格式
+                    #sed -i '1,/^#!date/{/^$/d}' $conf_file
+                    #sed -i 's/\([^[:space:]]\)\s*=\s*\([^[:space:]]\)/\1 = \2/g' $plugin_file
+                    #sed -i -E '/( script-path| requires-body| tag| timeout)\s*=/ s/([^[:space:]])\s*=\s*([^[:space:]])/\1 = \2/g' $plugin_file
+                    sed -i '/^hostname/s/,\([^ ]\)/, \1/g' $plugin_file
+                    
+                    # 对比插件内容更新date值
+                    grep -v '^#!date' "$plugin_file" > "plugin_new.tmp"
+                    if [ -f "$loon_plugin_folder/$script_name.plugin" ]; then
+                        grep -v '^#!date' "$loon_plugin_folder/$script_name.plugin" > "plugin_old.tmp"
+                    fi
+                    if [ -f "plugin_new.tmp" ] && [ -f "plugin_old.tmp" ]; then
+                        if ! cmp -s "plugin_new.tmp" "plugin_old.tmp"; then
+                            sed -i "s/#!date.*/#!date = $current_date/" "$plugin_file"
+                            grep -q '^#!date' "$conf_file" && sed -i "s/^#!date.*/#!date = $current_date/" "$conf_file" || echo -e "\n#!date = $current_date" >> "$conf_file"
+                        fi
+                    fi
+                    rm -f "plugin_new.tmp" "plugin_old.tmp"
+                    mv -f "$plugin_file" "$loon_plugin_folder/"
+                    
+                    #实例生成conf
+                    script_file="$script_folder/$script_name/$script_name.conf"
+                    [ ! -e "$script_file" ] && mkdir -p "$script_folder/$script_name" && mv "$conf_file" "$script_file"
+                fi
+                rm -fr tmp
+            fi
+        done
+            
+        if [ -n "$(find "$loon_plugin_folder" -name '*.plugin' | head -n 1)" ]; then
+            echo '开始更新readme.md'
+            process_plugin_file() {
+                local file="$1"
+                plugin_name=$(extract_value "^#!name" "$file")
+                plugin_date=$(grep -i "^#!date" "$file" | awk -F '=' '{print $2}' | sed 's/^ *//;s/ *$//' | while read date; do date -d "$date" +%Y/%m/%d; done)
+                if [ -n "$plugin_name" ]; then
+                    install_link="https://www.nsloon.com/openloon/import?plugin=$base_url$file"
+                    raw_link="$base_url$file"
+                    echo "| ✅[$plugin_name]($raw_link) | $plugin_date | [导入]($install_link) |" >> "$readme_file"
+                fi
+            }
+            files_with_dates=$(find "$loon_plugin_folder" -maxdepth 1 -type f -name "*.plugin" -exec grep -H '#!date' {} +)
+            plugin_files=($(echo "$files_with_dates" | awk -F'[=]' '{print $NF,$0}' | sort -r -k1 | cut -d' ' -f4- | awk -F ':' '{print $1}'))
+            readme_file="$loon_plugin_folder/readme.md"
+            touch "$readme_file" && echo -e "## 🎈Loon插件\n| ⚙插件名称 | 📌更新时间 | 链接 |\n| - | - | - |" > "$readme_file"
+            for file in "${plugin_files[@]}"; do
+                file_base_name=$(basename "$file" .plugin)
+                conf_file="$script_folder/$file_base_name/$file_base_name.conf"
+                if [ -f "$conf_file" ] && grep -qE "^readme_tag\s*=\s*(常用插件|)$" "$conf_file"; then
+                    process_plugin_file "$file"
+                fi
+            done
+            echo -e "#### 🔓解锁插件:\n<details>\n<summary>👆︎点击查看</summary>\n<ul>\n\n| 🔓插件名称 | 📌更新时间 | 链接 |\n| - | - | - |" >> "$readme_file"
+            for file in "${plugin_files[@]}"; do
+                file_base_name=$(basename "$file" .plugin)
+                conf_file="$script_folder/$file_base_name/$file_base_name.conf"
+                if [ -f "$conf_file" ] && grep -qE "^readme_tag\s*=\s*.*解锁.*$" "$conf_file"; then
+                    process_plugin_file "$file"
+                fi
+            done
+            echo -e "</ul>\n</details>\n\n## ⚠️免责声明" >> "$readme_file"
+            sed -n '/^## ⚠️免责声明$/,/^##/{/^##/!p}' readme.md >> "$readme_file"
+            sed -i '/## 🎈Loon插件/,$d' loon/readme.md ; cat $readme_file >> loon/readme.md
+        fi
+        
+        if [ ! -f "$script_folder/script.conf" ]; then
+            echo '创建script示例'
+            cat <<EOF > "$script_folder/script.conf"
+        ## 用于 Loon 插件定时下载到仓库，以防止原作者删除库的脚本配置文件。
+        # 支持将 Quantumult X 脚本转换为 Loon 插件，并覆盖原插件中的参数。
+        # 注意：仅供学习自用，不保证使用过程中的问题。
+        
+        # 下载地址，支持 Loon 插件和 Quantumult X 脚本（必填）
+        remote_url = 
+        
+        # 用于创建的文件名（可选，默认使用下载地址的文件名）
+        script_name = 
+        
+        # 用于 readme.md 中插件分类（可选）
+        readme_tag = 
+        
+        # 使用方法：
+        # 1. 填写下载地址（remote_url）和可选的文件名（script_name）。
+        # 2. 必要时填写插件分类标签（readme_tag）。
+        # 3. 在下方需要覆盖默认参数的部分添加相应的配置。
+        # 4. 保存该文件会自动运行工作流，生成插件和 conf 配置文件，便于后续修改。
+        
+        # ============================= 可选 - 下方添加需要覆盖的默认参数 =============================
+        # 例如：
+        # #!name = xxx
+        # #!icon = xxx
+        # [Rule]
+        # DOMAIN, xxx, PROXY
+        # [Mitm]
+        # hostname = xxx
+        EOF
+        fi
+        
+    - name: Commit and push
+      run: |
+        git config --global user.email "mphin@qq.com" && git config --global user.name "Bot"
+        git add . && git commit -m "插件更新$(date +'%Y-%m-%d %H:%M')" || exit 0
+        git push
+
+    - name: Cleanup Workflow
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 2

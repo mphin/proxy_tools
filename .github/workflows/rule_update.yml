@@ -1,0 +1,160 @@
+name: Rule_update
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'rules/*.list'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up time zone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+      
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Get last commit files
+        id: last_commit
+        run: |
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+      - name: Get changed files
+        id: file_list
+        run: |
+          COMMIT=${{ env.sha }}
+          URL="https://api.github.com/repos/${{ github.repository }}/compare/${COMMIT}^...${COMMIT}"
+          FILES=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" $URL | jq -r '.files[] | select(.filename | test("^rules/.*\\.list$")) | .filename')
+          if [ -z "$FILES" ]; then
+            FILES=$(find rules -maxdepth 1 -name '*.list')
+          fi
+          echo FILES=$FILES >> $GITHUB_OUTPUT
+          
+      - name: Process Rule File
+        run: |
+          download_tag=$(curl -sL https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r '.tag_name')
+          wget -O sing-box.tar.gz "https://github.com/SagerNet/sing-box/releases/download/${download_tag}/sing-box-${download_tag#v}-linux-amd64.tar.gz"
+          tar -zxvf sing-box.tar.gz
+          cp sing-box-${download_tag#v}-linux-amd64/sing-box .
+          
+          echo 更新规则文件
+          FILES="${{ steps.file_list.outputs.FILES }}"
+          for file in $FILES; do
+              #修正字符
+              sed -i 's/＞/>/g' $file
+              #修改数量和日期
+              current_date=$(TZ=Asia/Shanghai date '+%Y年%m月%d日%H:%M:%S')
+              count=$(grep -e '^DOMAIN,' -e '^DOMAIN-SUFFIX,' -e '^IP-CIDR,' -e '^IP-CIDR6,' -e '^DOMAIN-KEYWORD,' $file | wc -l)
+              count_with_unit="${count}条"
+              sed -i "s/^# 更新: .*/# 更新: $current_date/" $file
+              sed -i "s/^# 数量: .*/# 数量: $count_with_unit/" $file
+              #修改规则正序
+              temp_file=$(mktemp)
+              domain_list=""
+              while IFS= read -r line || [[ -n $line ]]; do
+                  if [[ ! $line =~ ^[!#[:space:]]*$ && $line =~ ^(IP|DOMAIN).* ]]; then
+                      domain_list="$domain_list"$'\n'"$line"
+                  else
+                      if [[ $domain_list ]]; then
+                          echo "$domain_list" | sort | sed '/^$/d' >> "$temp_file"
+                          domain_list=""
+                      fi
+                          echo "$line" >> "$temp_file"
+                  fi
+              done < "$file"
+              if [[ $domain_list ]]; then
+                  echo "$domain_list" | sort | sed '/^$/d' >> "$temp_file"
+              fi
+              mv "$temp_file" "$file"
+              echo 转换classical规则
+              mkdir -p rules/classical
+              cp "$file" "rules/classical/$(basename $file .list).yaml"
+              sed -i '1s/^/payload:\n/' "rules/classical/$(basename $file .list).yaml"
+              sed -i '1!{/^DOMAIN\|^IP\|^PROCESS/!d; s/^/  - /}' "rules/classical/$(basename $file .list).yaml"
+              #排序classical规则
+              { head -n 1 "rules/classical/$(basename $file .list).yaml"; tail -n +2 "rules/classical/$(basename $file .list).yaml" | sort; } > "rules/classical/$(basename $file .list).yaml.sorted"
+              mv "rules/classical/$(basename $file .list).yaml.sorted" "rules/classical/$(basename $file .list).yaml"
+           
+              echo 转换sing-box规则
+              mkdir -p rules/sing-box
+              json_file="rules/sing-box/$(basename "$file" .list).json"
+              echo "{" > "$json_file"
+              echo '  "version": 1,' >> "$json_file"
+              echo '  "rules": [' >> "$json_file"
+              domain_values=""
+              domain_suffix_values=""
+              ip_cidr_values=""
+              domain_keyword_values=""
+              while IFS= read -r line; do
+                  if [[ -z "$line" || "$line" == \#* ]]; then
+                      continue
+                  fi
+                  if [[ "$line" == DOMAIN,* ]]; then
+                      domain=$(echo "$line" | cut -d, -f2)
+                      domain_values="$domain_values        \"$domain\","$'\n'
+                  fi
+                  if [[ "$line" == DOMAIN-SUFFIX,* ]]; then
+                      domain_suffix=$(echo "$line" | cut -d, -f2)
+                      domain_suffix_values="$domain_suffix_values        \"$domain_suffix\","$'\n'
+                  fi
+                  if [[ "$line" == IP-CIDR,* || "$line" == IP-CIDR6,* ]]; then
+                      ip_cidr=$(echo "$line" | cut -d, -f2)
+                      ip_cidr=$(echo "$ip_cidr" | sed 's/,no-resolve//g')
+                      ip_cidr_values="$ip_cidr_values        \"$ip_cidr\","$'\n'
+                  fi
+                  if [[ "$line" == DOMAIN-KEYWORD,* ]]; then
+                      domain_keyword=$(echo "$line" | cut -d, -f2)
+                      domain_keyword_values="$domain_keyword_values        \"$domain_keyword\","$'\n'
+                  fi
+              done < "$file"
+              if [ -n "$domain_values" ]; then
+                  echo "    {"$'\n'"      \"domain\": [" >> "$json_file"
+                  echo -n "$domain_values" >> "$json_file"
+                  sed -i '$ s/,$//' "$json_file"
+                  echo "      ]"$'\n'"    }," >> "$json_file"
+              fi
+              if [ -n "$domain_suffix_values" ]; then
+                  echo "    {"$'\n'"      \"domain_suffix\": [" >> "$json_file"
+                  echo -n "$domain_suffix_values" >> "$json_file"
+                  sed -i '$ s/,$//' "$json_file"
+                  echo "      ]"$'\n'"    }," >> "$json_file"
+              fi
+              if [ -n "$ip_cidr_values" ]; then
+                  echo "    {"$'\n'"      \"ip_cidr\": [" >> "$json_file"
+                  echo -n "$ip_cidr_values" >> "$json_file"
+                  sed -i '$ s/,$//' "$json_file"
+                  echo "      ]"$'\n'"    }," >> "$json_file"
+              fi
+              if [ -n "$domain_keyword_values" ]; then
+                  echo "    {"$'\n'"      \"domain_keyword\": [" >> "$json_file"
+                  echo -n "$domain_keyword_values" >> "$json_file"
+                  sed -i '$ s/,$//' "$json_file"
+                  echo "      ]"$'\n'"    }," >> "$json_file"
+              fi
+              sed -i '$ s/,$//' "$json_file"
+              echo "  ]"$'\n'"}" >> "$json_file"
+              ./sing-box rule-set compile --output rules/sing-box/$(basename "$file" .list).srs $json_file
+          done
+
+          echo 更新readme.md
+          new_date=$(TZ='Asia/Shanghai' date +'%Y年%m月%d日%H:%M:%S')
+          count_1=$(find rules/ -name '*.list' ! -name 'Adblack.list' -exec grep -e '^DOMAIN,' -e '^DOMAIN-SUFFIX,' -e '^IP-CIDR,' -e '^IP-CIDR6,' -e '^DOMAIN-KEYWORD,' {} + | wc -l)
+          sed -i "s/最近更新: .*/最近更新: $new_date/" readme.md
+          sed -i "s/规则数量: .*/规则数量: $count_1条/" readme.md
+
+          rm -fr sing-box.tar.gz sing-box-${download_tag#v}-linux-amd64 sing-box
+      - name: Commit And Push
+        run: |
+          git config --global user.email "mphin@qq.com" && git config --global user.name "Bot"
+          git add . && git commit -m "规则更新$(date +'%Y-%m-%d %H:%M')"
+          git push
+
+      - name: Cleanup Workflow
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 2

@@ -1,0 +1,9 @@
+#!name = Documents解锁
+#!desc = 仅供学习和个人使用，不得用于商业目的或其他非法用途
+#!date = 2024-07-11 04:21:00
+
+[Script]
+http-request https://license.pdfexpert.com/api/2.0/documents/subscription/refresh script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/documents/script/documents.js, requires-body = true, tag = Documents解锁
+
+[Mitm]
+hostname = *.pdfexpert.com

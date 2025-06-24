@@ -1,0 +1,19 @@
+/*
+插件引用https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin
+*/
+#!name = BoxJs
+#!desc = JavaScript数据管理器，用于管理脚本储存的数据。使用前请在本插件的详情页面为[PROXY]项分配代理策略。
+#!openUrl = http://boxjs.com
+#!author = chavyleung
+#!homepage = https://chavyleung.gitbook.io/boxjs/
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/boxjs/icon/boxjs.png
+#!date = 2024-07-24 04:19:57
+
+[Rule]
+DOMAIN-SUFFIX,jsdelivr.net,PROXY
+
+[Script]
+http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/boxjs/script/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
+
+[Mitm]
+hostname = boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net

@@ -1,0 +1,9 @@
+#!name = 百度搜索防跳转
+#!desc = 使用网页版百度搜索,在搜索结果中点击关键词时防跳转AppStore
+#!date = 2024-05-25 06:57:13
+
+[Rewrite]
+^https?:\/\/.*\.baidu\.com header-replace User-Agent "Mozilla/5.0 (Linux; Android 9.0; iPhone; U; CPU iPhone OS 9_9_9 like Mac OS X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/76.0.3809.89 Mobile Safari/537.36 T7/11.23 SP-engine/2.19.0 baiduboxapp (Baidu; P1 9.0)"
+
+[Mitm]
+hostname = *.baidu.com, pan.baidu.com

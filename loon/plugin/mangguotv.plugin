@@ -1,0 +1,13 @@
+#!name = 芒果TV解锁
+#!desc = 仅供学习和个人使用，不得用于商业目的或其他非法用途
+#!date = 2024-07-20 04:21:37
+
+[Rewrite]
+^https?://mobile.da.mgtv.com\/m\/page reject
+
+[Script]
+http-response ^https?:\/\/.*mgtv.com.*(GetUserInfo|module\/list\?_support|app\/bdboot|pullReleaseInfo|floor\/detail|video\/source|entry\?_support).*$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/mangguotv/script/mgtv.js, requires-body = true, tag = 芒果TV,Vip+会员画质+去广告,页面优化
+http-request ^https?:\/\/mobile-stream\.api\.mgtv\.com\/v1\/video\/source\? script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/mangguotv/script/mgtk.js, tag = 芒果TV,Vip+会员画质+去广告,页面优化
+
+[Mitm]
+hostname = *mgtv.com

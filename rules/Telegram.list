@@ -1,0 +1,31 @@
+# 内容: 📲 电报消息 规则集
+# 备注: 本列表为Telegram相关域名，其他移步至https://github.com/mphin/ProxyTools
+# 更新: 2024年04月28日16:08:52
+# 数量: 16条
+
+# Telegram
+IP-CIDR,5.28.195.80/32,no-resolve
+
+# Nicegram
+DOMAIN-KEYWORD,nicegram
+DOMAIN-SUFFIX,mbrx.app
+
+# Swiftgram
+DOMAIN-SUFFIX,swiftgram.app
+
+# Telegram工具
+DOMAIN-SUFFIX,tgstat.com
+
+# ------------------------------------------------
+# 以下规则来源为ACL4SSR，仅删除部分重复
+DOMAIN-KEYWORD,telegram
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telesco.pe
+IP-CIDR,109.239.140.0/24,no-resolve
+IP-CIDR,149.154.160.0/20,no-resolve
+IP-CIDR,91.108.0.0/16,no-resolve
+IP-CIDR6,2001:67c:4e8::/48,no-resolve
+IP-CIDR6,2001:b28:f23d::/48,no-resolve
+IP-CIDR6,2001:b28:f23f::/48,no-resolve

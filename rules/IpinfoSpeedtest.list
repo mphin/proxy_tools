@@ -1,0 +1,86 @@
+# 内容: 📡 IP｜测速 规则集
+# 备注: 本列表为IP检测及测速相关域名，其他移步至https://github.com/mphin/ProxyTools
+# 更新: 2024年04月02日13:19:41
+# 数量: 71条
+
+
+# IP查询
+DOMAIN-SUFFIX,2023.ip138.com
+DOMAIN-SUFFIX,6.ipchaxun.net
+DOMAIN-SUFFIX,api.ipinfo.be
+DOMAIN-SUFFIX,api.myip.la
+DOMAIN-SUFFIX,chaip.org
+DOMAIN-SUFFIX,ez2o.com
+DOMAIN-SUFFIX,ip-api.com
+DOMAIN-SUFFIX,ip.900cha.com
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ip.skk.moe
+DOMAIN-SUFFIX,ip125.com
+DOMAIN-SUFFIX,ipaddress.my
+DOMAIN-SUFFIX,ipapi.co
+DOMAIN-SUFFIX,iphw.in0.cc
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,ipinfo.io
+DOMAIN-SUFFIX,jsonp-ip.com
+DOMAIN-SUFFIX,mip.chinaz.com
+DOMAIN-SUFFIX,qifu-api.baidubce.com
+DOMAIN-SUFFIX,sojson.com
+DOMAIN-SUFFIX,tool.lu
+DOMAIN-SUFFIX,wtfismyip.com
+
+# IP归属地
+# > 抖音
+DOMAIN,sso.douyin.com
+DOMAIN,www.douyin.com
+DOMAIN-KEYWORD,-core-c-hl
+DOMAIN-KEYWORD,-core-c-lf
+DOMAIN-KEYWORD,-normal-c-hl
+DOMAIN-KEYWORD,-normal-c-lf
+DOMAIN-KEYWORD,-normal-hl
+DOMAIN-KEYWORD,-normal-lf
+DOMAIN-KEYWORD,core-c-lq
+DOMAIN-KEYWORD,core-lq
+DOMAIN-KEYWORD,normal-c-lq
+DOMAIN-KEYWORD,normal-lq
+DOMAIN-KEYWORD,search-lq
+DOMAIN-KEYWORD,search-quic-lq
+DOMAIN-SUFFIX,snssdk.com
+
+# 测速
+DOMAIN-SUFFIX,speed.ffq-test.com
+# > Speedtest
+DOMAIN,cdn.ziffstatic.com
+DOMAIN-KEYWORD,speedtest
+DOMAIN-SUFFIX,cdnst.net
+DOMAIN-SUFFIX,cellmaps.com
+DOMAIN-SUFFIX,ekahau.cloud
+DOMAIN-SUFFIX,ekahau.com
+DOMAIN-SUFFIX,fast.com
+DOMAIN-SUFFIX,ookla.com
+DOMAIN-SUFFIX,ooklaserver.net
+DOMAIN-SUFFIX,pingtest.net
+DOMAIN-SUFFIX,speed.cloudflare.com
+DOMAIN-SUFFIX,speed.dler.io
+DOMAIN-SUFFIX,webtest.net
+
+# IPv6测试
+DOMAIN,ipv4.duiadns.net
+DOMAIN,ipv4.excathedra.co
+DOMAIN,ipv4.sixte.st
+DOMAIN,ipv6.testipv6.de
+DOMAIN-KEYWORD,ipv4-test
+DOMAIN-KEYWORD,ipv4.test
+DOMAIN-KEYWORD,ipv6-test
+DOMAIN-KEYWORD,test-ipv6
+DOMAIN-SUFFIX,8n1.org
+DOMAIN-SUFFIX,antradar.com
+DOMAIN-SUFFIX,ipv6.br
+DOMAIN-SUFFIX,jamieweb.net
+DOMAIN-SUFFIX,joram.it
+DOMAIN-SUFFIX,mudgee.host
+DOMAIN-SUFFIX,nop.hu
+DOMAIN-SUFFIX,nsx.de
+DOMAIN-SUFFIX,stdio.be
+DOMAIN-SUFFIX,steffann.nl
+DOMAIN-SUFFIX,tunnelbroker.net
+DOMAIN-SUFFIX,vyncke.org

@@ -1,0 +1,11 @@
+#!name = GitHub解锁
+#!desc = 除了Ai功能，其他功能都可用
+#!author = chxm1023
+#!homepage = https://t.me/chxm1023
+#!date = 2024-03-24 10:43:00
+
+[Script]
+http-response https://api.github.com/graphql script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/github/script/github.js, requires-body = true, tag = GitHub解锁
+
+[Mitm]
+hostname = api.github.com

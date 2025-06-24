@@ -1,0 +1,113 @@
+# 内容: 🎮 游戏平台 规则集
+# 备注: 本列表为游戏平台域名，其他移步至https://github.com/mphin/ProxyTools
+# 更新: 2024年04月02日13:19:41
+# 数量: 86条
+
+# 原神
+DOMAIN-SUFFIX,hoyoverse.com
+DOMAIN-SUFFIX,yuanshen.com
+
+# Pubg Mobile
+DOMAIN,cloud.gsdk.proximabeta.com
+DOMAIN,cloud.vmp.onezapp.com
+DOMAIN,dl.listdl.com
+DOMAIN,ios.crashsight.wetest.net
+DOMAIN,k.gjacky.com
+DOMAIN,sg.tdatamaster.com
+DOMAIN-SUFFIX,igame.gcloudcs.com
+DOMAIN-SUFFIX,mbgame.anticheatexpert.com
+
+# Steam
+# > Pubg
+DOMAIN,log-brofront.kraftonde.com
+DOMAIN-SUFFIX,playbattlegrounds.com
+DOMAIN-SUFFIX,pubg.com
+DOMAIN-SUFFIX,pubgbluehole.com
+DOMAIN-SUFFIX,pubgha.com
+DOMAIN-SUFFIX,pubwxp-mim.vivox.com
+DOMAIN-SUFFIX,pubwxp.www.vivox.com
+# > Dota2
+DOMAIN-SUFFIX,dota2.com
+DOMAIN-SUFFIX,valve.net
+# > Apex
+DOMAIN-SUFFIX,eac-cdn.com
+DOMAIN-SUFFIX,stryder.respawn.com
+# > 永劫无间
+DOMAIN-SUFFIX,easebar.com
+DOMAIN-SUFFIX,g0.gsf.easbar.com
+
+# King Games
+DOMAIN-SUFFIX,king.com
+DOMAIN-SUFFIX,kinggames-multisite.onvanilla.net
+DOMAIN-SUFFIX,midasplayer.cloud
+DOMAIN-SUFFIX,midasplayer.com
+
+# Supercell
+DOMAIN-SUFFIX,supercell.com
+DOMAIN-SUFFIX,supercell.net
+
+# ------------------------------------------------
+# 以下规则来源为ACL4SSR，仅删除部分重复
+# Epic
+DOMAIN-SUFFIX,epicgames.com
+DOMAIN-SUFFIX,epicgames.dev
+DOMAIN-SUFFIX,helpshift.com
+DOMAIN-SUFFIX,paragon.com
+DOMAIN-SUFFIX,unrealengine.com
+# Origin
+DOMAIN,cloudsync-prod.s3.amazonaws.com
+DOMAIN,eaasserts-a.akamaihd.net
+DOMAIN,origin-a.akamaihd.net
+DOMAIN,originasserts.akamaized.net
+DOMAIN,rtm.tnt-ea.com
+DOMAIN-SUFFIX,ea.com
+DOMAIN-SUFFIX,origin.com
+# Sony
+DOMAIN-SUFFIX,playstation.com
+DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,playstationnetwork.com
+DOMAIN-SUFFIX,sony.com
+DOMAIN-SUFFIX,sonyentertainmentnetwork.com
+# Steam
+DOMAIN,steambroadcast.akamaized.net
+DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN,steampipe.akamaized.net
+DOMAIN,steamstore-a.akamaihd.net
+DOMAIN,steamusercontent-a.akamaihd.net
+DOMAIN,steamuserimages-a.akamaihd.net
+DOMAIN-SUFFIX,fanatical.com
+DOMAIN-SUFFIX,humblebundle.com
+DOMAIN-SUFFIX,playartifact.com
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamgames.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamstat.us
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,underlords.com
+DOMAIN-SUFFIX,valvesoftware.com
+# Nintendo
+DOMAIN-SUFFIX,nintendo-europe.com
+DOMAIN-SUFFIX,nintendo.be
+DOMAIN-SUFFIX,nintendo.co.jp
+DOMAIN-SUFFIX,nintendo.co.uk
+DOMAIN-SUFFIX,nintendo.com
+DOMAIN-SUFFIX,nintendo.com.au
+DOMAIN-SUFFIX,nintendo.de
+DOMAIN-SUFFIX,nintendo.es
+DOMAIN-SUFFIX,nintendo.eu
+DOMAIN-SUFFIX,nintendo.fr
+DOMAIN-SUFFIX,nintendo.it
+DOMAIN-SUFFIX,nintendo.jp
+DOMAIN-SUFFIX,nintendo.net
+DOMAIN-SUFFIX,nintendo.nl
+DOMAIN-SUFFIX,nintendowifi.net
+# Xbox
+DOMAIN-SUFFIX,gamepass.com
+DOMAIN-SUFFIX,xbox.com
+DOMAIN-SUFFIX,xboxab.com
+DOMAIN-SUFFIX,xboxab.net
+DOMAIN-SUFFIX,xboxlive.com
+DOMAIN-SUFFIX,xboxservice.com
+DOMAIN-SUFFIX,xboxservices.com

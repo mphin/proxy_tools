@@ -1,0 +1,15 @@
+/*
+插件引用https://raw.githubusercontent.com/deezertidal/private/master/plugallery/adguard.plugin
+*/
+#!name = Adguard解锁
+#!desc = AdGuard 美区 解锁会员
+#!author = yqc007
+#!homepage = https://yfamily.ml
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/adguard/icon/adguard.png
+#!date = 2024-04-08 02:03:08
+
+[Script]
+http-response ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt requires-body=1,script-path=https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/adguard/script/adguardprocrack.js
+
+[Mitm]
+hostname = mobile-api.adguard.org

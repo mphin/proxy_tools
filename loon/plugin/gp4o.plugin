@@ -1,0 +1,12 @@
+#!name = Gp4o解锁
+#!desc = 非一次性解锁，保持插件开启，仅供学习和个人使用，不得用于商业目的或其他非法用途
+#!author = @Yu9191
+#!homepage = https://github.com/Yu9191/Rewrite
+#!date = 2024-05-19 00:00:00
+
+[Script]
+http-request https://nichousha.sjrjyffs.top/api/img/aiSketch script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/gp4o/script/gtp4ohd.js, requires-body = true, tag = Gp4o解锁
+http-response https://nichousha.sjrjyffs.top/api/app/user/getCurrentInfo script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/gp4o/script/gtp4o.js, requires-body = true, tag = Gp4o解锁
+
+[Mitm]
+hostname = nichousha.sjrjyffs.top

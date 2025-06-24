@@ -1,0 +1,13 @@
+#!name = 彩云天气解锁
+#!desc = 非一次性解锁，保持插件开启，仅供学习和个人使用，不得用于商业目的或其他非法用途
+#!author = chxm1023
+#!homepage = https://t.me/chxm1023
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/caiyuntianqi/icon/caiyuntianqi.png
+#!date = 2024-04-26 04:13:18
+
+[Script]
+http-response ^https?:\/\/(biz|wrapper|starplucker)\.(cyapi|caiyunapp)\.(cn|com)\/(.+\/(user\?app_name|activity\?app_name|visitors|operation\/banners|operation\/homefeatures|config)|p\/v\d\/(vip_info|user_info|entries|privileges|trial_card\/info)) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/caiyuntianqi/script/caiyuntianqi.js, requires-body = true, tag = 彩云天气解锁
+http-request ^https?:\/\/(api|wrapper)\.(cyapi|caiyunapp)\.(cn|com)\/v\d\/(satellite|nafp\/origin_images) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/caiyuntianqi/script/caiyuntianqi.js, tag = 彩云天气解锁
+
+[Mitm]
+hostname = *.cyapi.cn, *.caiyunapp.com

@@ -1,0 +1,16 @@
+/*
+插件引用https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/JD_Price.plugin
+*/
+#!name = 京东比价
+#!desc = 在京东应用内嵌入比价信息，点击商品标题即可查看。仅支持京东的标准模式，且需要应用版本不高于12.6.0。
+#!openUrl = https://apps.apple.com/app/id414245413
+#!author = zwf234
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/jd_price/icon/jd_price.png
+#!date = 2024-07-27 04:22:07
+
+[Script]
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/jd_price/script/jd_price.js, requires-body = true, tag = 京东比价
+
+[Mitm]
+hostname = api.m.jd.com

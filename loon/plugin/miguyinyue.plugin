@@ -1,0 +1,15 @@
+#!name = 咪咕音乐解锁
+#!desc = 仅供学习和个人使用，不得用于商业目的或其他非法用途
+#!date = 2024-04-02 16:07:48
+
+[Rewrite]
+^https://app\.c\.nf\.migu\.cn/member/api/marketing/text reject
+^https://app\.c.nf\.migu\.cn/payment/watch-ad reject-200
+^https://h5\.nf\.migu\.cn/app/v4/p/pendant-ad/index reject
+
+[Script]
+http-response ^https?:\/\/(u|c|app).(musicapp|c.nf).migu.cn.*(user\/(queryUserInfo.do|member\/center))|column\/(startup-pic-with-ad|marketing\/advertising)|resource\/skin\/list\/.*$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/miguyinyue/script/miguyinyue.js, requires-body = true, tag = 咪咕音乐vip、音质、下载
+http-request ^https?:\/\/app.(c|pd).nf.migu.cn\/.*\/(listen-url|music\/batchQueryMusicPolicy|download-url).*$ script-path = https://raw.githubusercontent.com/mphin/proxy_tools/main/scripts/miguyinyue/script/migu.js, tag = 咪咕音乐vip、音质、下载
+
+[Mitm]
+hostname = app.pd.nf.migu.cn, c.musicapp.migu.cn, u.musicapp.migu.cn, app.c.nf.migu.cn, app.c.nf.migu.cn, h5.nf.migu.cn
