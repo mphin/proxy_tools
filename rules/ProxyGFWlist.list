@@ -53,6 +53,7 @@ DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,007.tg
 # > Adguard
 DOMAIN-SUFFIX,adtidy.org
+DOMAIN-SUFFIX,d.adguard-dns.com
 
 # 域名服务
 DOMAIN-SUFFIX,godaddy.com
