@@ -1115,6 +1115,7 @@ payload:
   - DOMAIN-SUFFIX,cytode.us
   - DOMAIN-SUFFIX,cz.cc
   - DOMAIN-SUFFIX,d-fukyu.com
+  - DOMAIN-SUFFIX,d.adguard-dns.com
   - DOMAIN-SUFFIX,d0z.net
   - DOMAIN-SUFFIX,d100.net
   - DOMAIN-SUFFIX,d2bay.com
