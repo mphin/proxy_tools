@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年06月29日05:09:51
-# 数量: 91144条
+# 更新: 2025年07月01日05:10:38
+# 数量: 91143条
 .000dn.com
 .0013.cc
 .0019x.com
@@ -51452,7 +51452,6 @@
 .rabbit.tg.meitu.com
 .xiuxiu.android.dl.meitu.com
 .report.meituan.com
-.analytics.meituan.net
 .data-sdk-uuid-log.d.meituan.net
 .dreport.meituan.net
 .xiuxiu.mobile.meitudata.com

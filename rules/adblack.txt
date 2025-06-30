@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年06月29日05:09:51
-# 数量: 91144条
+# 更新: 2025年07月01日05:10:38
+# 数量: 91143条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -51452,7 +51452,6 @@ DOMAIN-SUFFIX,message.meitu.com
 DOMAIN-SUFFIX,rabbit.tg.meitu.com
 DOMAIN-SUFFIX,xiuxiu.android.dl.meitu.com
 DOMAIN-SUFFIX,report.meituan.com
-DOMAIN-SUFFIX,analytics.meituan.net
 DOMAIN-SUFFIX,data-sdk-uuid-log.d.meituan.net
 DOMAIN-SUFFIX,dreport.meituan.net
 DOMAIN-SUFFIX,xiuxiu.mobile.meitudata.com
