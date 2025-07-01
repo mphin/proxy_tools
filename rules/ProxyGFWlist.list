@@ -1,7 +1,7 @@
 # 内容: ✈️ 国外常规 规则集
 # 备注: 本列表为国外常规代理域名，不含Telegram、OpenAi及国外媒体，其他移步至https://github.com/mphin/ProxyTools
-# 更新: 2025年06月29日04:31:05
-# 数量: 6065条
+# 更新: 2025年07月02日00:09:51
+# 数量: 6066条
 
 # Twitter
 DOMAIN-SUFFIX,cms-twdigitalassets.com
@@ -15,7 +15,6 @@ DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,ghcr.io
 
 # 知识交流
-DOMAIN-SUFFIX,nodeseek.com
 DOMAIN-SUFFIX,bulianglin.com
 DOMAIN-SUFFIX,clashios.com
 DOMAIN-SUFFIX,duangks.com
@@ -24,6 +23,7 @@ DOMAIN-SUFFIX,ffqla.net
 DOMAIN-SUFFIX,getupnote.com
 DOMAIN-SUFFIX,ishowutv.com
 DOMAIN-SUFFIX,metacubex.one
+DOMAIN-SUFFIX,nodeseek.com
 DOMAIN-SUFFIX,telghub.com
 DOMAIN-SUFFIX,twblogs.net
 DOMAIN-SUFFIX,v2rayssr.com
