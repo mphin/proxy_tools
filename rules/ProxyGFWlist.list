@@ -38,6 +38,7 @@ IP-CIDR,34.120.195.249/32,no-resolve
 DOMAIN-SUFFIX,maxcdn.bootstrapcdn.com
 # > 图床
 DOMAIN-SUFFIX,sm.ms
+DOMAIN-SUFFIX,111666.best
 
 # 工具
 DOMAIN-SUFFIX,adguard-vpn.com
