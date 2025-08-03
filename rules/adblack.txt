@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年08月02日05:11:37
-# 数量: 92589条
+# 更新: 2025年08月04日05:11:02
+# 数量: 92587条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -92422,8 +92422,6 @@ DOMAIN-SUFFIX,zymerget.win
 DOMAIN-SUFFIX,zymicdirgy.click
 DOMAIN-SUFFIX,zymjzwvmjjqz.top
 DOMAIN-SUFFIX,zynewaylxyxex.buzz
-DOMAIN-SUFFIX,zynga.com
-DOMAIN-SUFFIX,zyngaplayersupport.com
 DOMAIN-SUFFIX,zypenetwork.com
 DOMAIN-SUFFIX,zyrelolbbqelo.top
 DOMAIN-SUFFIX,zyrelolbbqqeq.top
