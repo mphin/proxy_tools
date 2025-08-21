@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年08月20日05:10:38
-# 数量: 90733条
+# 更新: 2025年08月22日05:10:07
+# 数量: 90743条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -5233,7 +5233,17 @@ DOMAIN-SUFFIX,adtrue24.com
 DOMAIN-SUFFIX,adttt.com
 DOMAIN-SUFFIX,e.aduiz.com
 DOMAIN-SUFFIX,m.aduiz.com
-DOMAIN-SUFFIX,adukwai.com
+DOMAIN-SUFFIX,p1-ad.adukwai.com
+DOMAIN-SUFFIX,p1-jx.adukwai.com
+DOMAIN-SUFFIX,p2-ad.adukwai.com
+DOMAIN-SUFFIX,p2-jx.adukwai.com
+DOMAIN-SUFFIX,p2-lm.adukwai.com
+DOMAIN-SUFFIX,p3-ad.adukwai.com
+DOMAIN-SUFFIX,p4-ad.adukwai.com
+DOMAIN-SUFFIX,p5-ad.adukwai.com
+DOMAIN-SUFFIX,v1-lm.adukwai.com
+DOMAIN-SUFFIX,v2-lm.adukwai.com
+DOMAIN-SUFFIX,v4-lm.adukwai.com
 DOMAIN-SUFFIX,adult.xyz
 DOMAIN-SUFFIX,adult3dcomics.com
 DOMAIN-SUFFIX,adultadvertising.net
