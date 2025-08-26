@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年08月26日05:10:06
-# 数量: 87291条
+# 更新: 2025年08月27日05:09:58
+# 数量: 87290条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -76588,7 +76588,6 @@ DOMAIN-SUFFIX,tuilygtcief.com
 DOMAIN-SUFFIX,tuinei.com
 DOMAIN-SUFFIX,tuinfra.com
 DOMAIN-SUFFIX,tuipenguin.com
-DOMAIN-SUFFIX,yun.tuisnake.com
 DOMAIN-SUFFIX,tuite8.com
 DOMAIN-SUFFIX,tuitiger.com
 DOMAIN-SUFFIX,tuituigui19999.com
