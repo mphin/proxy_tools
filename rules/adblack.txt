@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年09月05日05:10:07
-# 数量: 94413条
+# 更新: 2025年09月07日05:08:26
+# 数量: 94409条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -60376,10 +60376,6 @@ DOMAIN-SUFFIX,s.orangeville.com
 DOMAIN-SUFFIX,img.oraohui.cn
 DOMAIN-SUFFIX,oraubsoux.net
 DOMAIN-SUFFIX,offline-adv.oray.com
-DOMAIN-SUFFIX,tk.oray.com
-DOMAIN-SUFFIX,sl-tk.oray.com
-DOMAIN-SUFFIX,sl-log.oray.net
-DOMAIN-SUFFIX,pubsub02.oray.net
 DOMAIN-SUFFIX,orb92.com
 DOMAIN-SUFFIX,orbengine.com
 DOMAIN-SUFFIX,orbicalrykes.com

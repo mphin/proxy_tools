@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年09月05日05:10:07
-# 数量: 94413条
+# 更新: 2025年09月07日05:08:26
+# 数量: 94409条
 .000dn.com
 .0013.cc
 .0019x.com
@@ -60376,10 +60376,6 @@
 .img.oraohui.cn
 .oraubsoux.net
 .offline-adv.oray.com
-.tk.oray.com
-.sl-tk.oray.com
-.sl-log.oray.net
-.pubsub02.oray.net
 .orb92.com
 .orbengine.com
 .orbicalrykes.com
