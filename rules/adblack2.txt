@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年09月11日05:09:48
-# 数量: 95044条
+# 更新: 2025年09月12日05:09:22
+# 数量: 95046条
 .000dn.com
 .0013.cc
 .0019x.com
@@ -41092,6 +41092,7 @@
 .site.comunicaciones.iesa.es
 .igxqyi.iese.edu
 .iesnare.com
+.ietheivaicai.com
 .ietyofedinj89yewtburgh.com
 .iewixvvsbfkwd.world
 .iewjctcinxthi.space
@@ -57412,6 +57413,7 @@
 .nisaapp.nexus-dt.com
 .nexusbloom.xyz
 .a8clkapply.mycredit.nexuscard.co.jp
+.nexusedgeio.com
 .smetrics.nexusmentalhealth.com
 .nexustwinkly.click
 .nexx360-static.io
