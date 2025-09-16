@@ -114,6 +114,8 @@ DOMAIN-SUFFIX,hjd2048.com
 # Emby
 # > Misty
 DOMAIN-SUFFIX,misty.cx
+# > 肥牛
+DOMAIN-SUFFIX,emby.feiniu.lol
 
 # Jellyfin
 # > 探花TV
