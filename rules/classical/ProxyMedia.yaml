@@ -169,6 +169,7 @@ payload:
   - DOMAIN-SUFFIX,dssott.com
   - DOMAIN-SUFFIX,dzcdn.net
   - DOMAIN-SUFFIX,edgedatg.com
+  - DOMAIN-SUFFIX,emby.feiniu.lol
   - DOMAIN-SUFFIX,encoretvb.com
   - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com
   - DOMAIN-SUFFIX,ext-twitch.tv
