@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年09月23日05:09:25
-# 数量: 95077条
+# 更新: 2025年09月25日05:09:37
+# 数量: 95078条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -61498,6 +61498,7 @@ DOMAIN-SUFFIX,httpdns.ocloud.oppomobile.com
 DOMAIN-SUFFIX,u.oppomobile.com
 DOMAIN-SUFFIX,adsfs-in.oppomobile.com
 DOMAIN-SUFFIX,httpdns.push.oppomobile.com
+DOMAIN-SUFFIX,api.open.oppomobile.com
 DOMAIN-SUFFIX,opportunitysearch.net
 DOMAIN-SUFFIX,opposecurves.life
 DOMAIN-SUFFIX,oppositionduchess.com
