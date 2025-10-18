@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年10月17日05:10:03
-# 数量: 98103条
+# 更新: 2025年10月19日05:08:58
+# 数量: 98102条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0019x.com
@@ -516,7 +516,6 @@ DOMAIN-SUFFIX,ebis.15jikai.com
 DOMAIN-SUFFIX,sadbmetrics.15kvalencia.es
 DOMAIN-SUFFIX,15tianqi.com
 DOMAIN-SUFFIX,16211973.xyz
-DOMAIN-SUFFIX,ac.dun.163.com
 DOMAIN-SUFFIX,adgeo.163.com
 DOMAIN-SUFFIX,adimg.163.com
 DOMAIN-SUFFIX,analytics.163.com
