@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年10月23日05:08:54
-# 数量: 97928条
+# 更新: 2025年10月25日05:09:47
+# 数量: 97929条
 .000dn.com
 .0013.cc
 .0014b04291.com
@@ -41841,6 +41841,8 @@
 .hcdnpe.iareduceri.ro
 .iasbetaffiliates.com
 .sc.iasds01.com
+.dd.iask.cn
+.mwzbp.iask.com.cn
 .qiyeb.iaskbus.com
 .wneia.iaskhot.com
 .stats.iata.org
@@ -69384,7 +69386,6 @@
 .ad.qun.qq.com
 .ad.weixin.qq.com
 .adnet.qq.com
-.ads.privacy.qq.com
 .adsense.html5.qq.com
 .adsmind.apdcdn.tc.qq.com
 .adsolution.imtt.qq.com

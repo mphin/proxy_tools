@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年10月23日05:08:54
-# 数量: 97928条
+# 更新: 2025年10月25日05:09:47
+# 数量: 97929条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0014b04291.com
@@ -41841,6 +41841,8 @@ DOMAIN-SUFFIX,iareascebc.life
 DOMAIN-SUFFIX,hcdnpe.iareduceri.ro
 DOMAIN-SUFFIX,iasbetaffiliates.com
 DOMAIN-SUFFIX,sc.iasds01.com
+DOMAIN-SUFFIX,dd.iask.cn
+DOMAIN-SUFFIX,mwzbp.iask.com.cn
 DOMAIN-SUFFIX,qiyeb.iaskbus.com
 DOMAIN-SUFFIX,wneia.iaskhot.com
 DOMAIN-SUFFIX,stats.iata.org
@@ -69384,7 +69386,6 @@ DOMAIN-SUFFIX,activeqq.3g.qq.com
 DOMAIN-SUFFIX,ad.qun.qq.com
 DOMAIN-SUFFIX,ad.weixin.qq.com
 DOMAIN-SUFFIX,adnet.qq.com
-DOMAIN-SUFFIX,ads.privacy.qq.com
 DOMAIN-SUFFIX,adsense.html5.qq.com
 DOMAIN-SUFFIX,adsmind.apdcdn.tc.qq.com
 DOMAIN-SUFFIX,adsolution.imtt.qq.com
