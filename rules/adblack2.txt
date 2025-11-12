@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年11月11日05:10:27
-# 数量: 99521条
+# 更新: 2025年11月13日05:11:11
+# 数量: 99513条
 .000dn.com
 .0013.cc
 .0014b04291.com
@@ -8215,15 +8215,7 @@
 .anysad.pro
 .anysdk.com
 .anysize.pro
-.adx-bj-req.anythinktech.com
-.adx-bj.anythinktech.com
-.adx-cn.anythinktech.com
-.adx-os.anythinktech.com
-.api.anythinktech.com
-.cn-api.anythinktech.com
-.da.anythinktech.com
-.tk.anythinktech.com
-.datk.anythinktech.com
+.anythinktech.com
 .anytimebananarecoil.com
 .anytimespurt.com
 .cc.anytrack.de

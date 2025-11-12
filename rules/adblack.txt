@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年11月11日05:10:27
-# 数量: 99521条
+# 更新: 2025年11月13日05:11:11
+# 数量: 99513条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0014b04291.com
@@ -8215,15 +8215,7 @@ DOMAIN-SUFFIX,anyrelationsandin.com
 DOMAIN-SUFFIX,anysad.pro
 DOMAIN-SUFFIX,anysdk.com
 DOMAIN-SUFFIX,anysize.pro
-DOMAIN-SUFFIX,adx-bj-req.anythinktech.com
-DOMAIN-SUFFIX,adx-bj.anythinktech.com
-DOMAIN-SUFFIX,adx-cn.anythinktech.com
-DOMAIN-SUFFIX,adx-os.anythinktech.com
-DOMAIN-SUFFIX,api.anythinktech.com
-DOMAIN-SUFFIX,cn-api.anythinktech.com
-DOMAIN-SUFFIX,da.anythinktech.com
-DOMAIN-SUFFIX,tk.anythinktech.com
-DOMAIN-SUFFIX,datk.anythinktech.com
+DOMAIN-SUFFIX,anythinktech.com
 DOMAIN-SUFFIX,anytimebananarecoil.com
 DOMAIN-SUFFIX,anytimespurt.com
 DOMAIN-SUFFIX,cc.anytrack.de
