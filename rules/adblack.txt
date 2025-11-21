@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年11月20日05:09:14
-# 数量: 95852条
+# 更新: 2025年11月22日05:10:34
+# 数量: 95856条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0014b04291.com
@@ -4537,6 +4537,7 @@ DOMAIN-SUFFIX,adfrika.com
 DOMAIN-SUFFIX,adfrontiers.com
 DOMAIN-SUFFIX,adfsda005.xyz
 DOMAIN-SUFFIX,adfunds.org
+DOMAIN-SUFFIX,adfunlink.com
 DOMAIN-SUFFIX,adfurikun.jp
 DOMAIN-SUFFIX,adfusion.com
 DOMAIN-SUFFIX,adfuture.cn
@@ -12616,7 +12617,7 @@ DOMAIN-SUFFIX,bidswitch.net
 DOMAIN-SUFFIX,bidsxchange.com
 DOMAIN-SUFFIX,bidtheatre.com
 DOMAIN-SUFFIX,bidtimize.com
-DOMAIN-SUFFIX,c.bidtoolads.com
+DOMAIN-SUFFIX,bidtoolads.com
 DOMAIN-SUFFIX,m.biduo.cc
 DOMAIN-SUFFIX,cn.bidushe.com
 DOMAIN-SUFFIX,bidvance.com
@@ -79366,6 +79367,7 @@ DOMAIN-SUFFIX,takingbackjuly.com
 DOMAIN-SUFFIX,yddtah.takingshape.com
 DOMAIN-SUFFIX,a8clk.takken-job.com
 DOMAIN-SUFFIX,traffic.taktikal.is
+DOMAIN-SUFFIX,takuad.com
 DOMAIN-SUFFIX,swwcyk.takvim.com.tr
 DOMAIN-SUFFIX,talaropa.com
 DOMAIN-SUFFIX,marketing.talbot-promo.com
@@ -81923,6 +81925,7 @@ DOMAIN-SUFFIX,toawaups.net
 DOMAIN-SUFFIX,toazdkl.top
 DOMAIN-SUFFIX,tobaccosturgeon.com
 DOMAIN-SUFFIX,tobaltoyon.com
+DOMAIN-SUFFIX,tobidad.com
 DOMAIN-SUFFIX,tobipovsem.com
 DOMAIN-SUFFIX,toboads.com
 DOMAIN-SUFFIX,toc.io
@@ -82159,6 +82162,7 @@ DOMAIN-SUFFIX,topnews-24.com
 DOMAIN-SUFFIX,topnewsgo.com
 DOMAIN-SUFFIX,topodat.info
 DOMAIN-SUFFIX,topofblogs.com
+DOMAIN-SUFFIX,toponad.com
 DOMAIN-SUFFIX,topperformance.xyz
 DOMAIN-SUFFIX,otx23nu6rzon.prep.toppers.com
 DOMAIN-SUFFIX,toppleunit.com

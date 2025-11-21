@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年11月20日05:09:14
-# 数量: 95852条
+# 更新: 2025年11月22日05:10:34
+# 数量: 95856条
 .000dn.com
 .0013.cc
 .0014b04291.com
@@ -4537,6 +4537,7 @@
 .adfrontiers.com
 .adfsda005.xyz
 .adfunds.org
+.adfunlink.com
 .adfurikun.jp
 .adfusion.com
 .adfuture.cn
@@ -12616,7 +12617,7 @@
 .bidsxchange.com
 .bidtheatre.com
 .bidtimize.com
-.c.bidtoolads.com
+.bidtoolads.com
 .m.biduo.cc
 .cn.bidushe.com
 .bidvance.com
@@ -79366,6 +79367,7 @@
 .yddtah.takingshape.com
 .a8clk.takken-job.com
 .traffic.taktikal.is
+.takuad.com
 .swwcyk.takvim.com.tr
 .talaropa.com
 .marketing.talbot-promo.com
@@ -81923,6 +81925,7 @@
 .toazdkl.top
 .tobaccosturgeon.com
 .tobaltoyon.com
+.tobidad.com
 .tobipovsem.com
 .toboads.com
 .toc.io
@@ -82159,6 +82162,7 @@
 .topnewsgo.com
 .topodat.info
 .topofblogs.com
+.toponad.com
 .topperformance.xyz
 .otx23nu6rzon.prep.toppers.com
 .toppleunit.com
