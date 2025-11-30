@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年11月29日05:10:14
-# 数量: 97665条
+# 更新: 2025年12月01日05:10:00
+# 数量: 97668条
 .000dn.com
 .0013.cc
 .0014b04291.com
@@ -46575,6 +46575,7 @@
 .juomsawqzkdqo.space
 .juomudsjlmert.online
 .jupdyvbotqwhw.site
+.juphaufaigna.net
 .jupit.xyz
 .juponrerope.com
 .jupteshoofah.net
@@ -82523,6 +82524,7 @@
 .thinpaltrydistrust.com
 .tracking.thiomucase.es
 .thipseedsy.net
+.thirairtoaboats.net
 .third-growth.pro
 .third-tracking.com
 .thirdgas.com
@@ -91409,6 +91411,7 @@
 .uqhpej.wiberrentacar.com
 .statistics.wibiya.com
 .wicdn.cloud
+.wichoaltaisheel.net
 .wickedhumankindbarrel.com
 .wickedreports.com
 .wickedsetup.com
