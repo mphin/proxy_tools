@@ -14,7 +14,8 @@ DOMAIN-SUFFIX,x.com
 # Github
 DOMAIN-SUFFIX,ghcr.io
 
-# 知识交流
+# 交流分享
+DOMAIN-SUFFIX,1lou.me
 DOMAIN-SUFFIX,bulianglin.com
 DOMAIN-SUFFIX,clashios.com
 DOMAIN-SUFFIX,duangks.com
