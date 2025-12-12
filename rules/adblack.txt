@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年12月11日05:13:21
-# 数量: 97639条
+# 更新: 2025年12月13日05:11:01
+# 数量: 97638条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0014b04291.com
@@ -50556,7 +50556,6 @@ DOMAIN-SUFFIX,yxrp.lianfuhuang.cn
 DOMAIN-SUFFIX,liangao.com
 DOMAIN-SUFFIX,liangpinge.com
 DOMAIN-SUFFIX,liangsbeflea.shop
-DOMAIN-SUFFIX,dig.lianjia.com
 DOMAIN-SUFFIX,lianka.cn
 DOMAIN-SUFFIX,lianle.com
 DOMAIN-SUFFIX,lianmeng.com
