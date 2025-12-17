@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2025年12月17日05:12:42
-# 数量: 98920条
+# 更新: 2025年12月18日05:12:20
+# 数量: 98919条
 .000dn.com
 .0013.cc
 .0014b04291.com
@@ -81413,7 +81413,6 @@
 .obs.system1onesource.com
 .feppiu.systemaction.es
 .systeme-business.online
-.systeme.io
 .forms.systeminetwork.com
 .systemleadb.com
 .marketing.systempavers.com
