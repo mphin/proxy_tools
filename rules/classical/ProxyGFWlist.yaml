@@ -4099,6 +4099,7 @@ payload:
   - DOMAIN-SUFFIX,pstatic.net
   - DOMAIN-SUFFIX,pt.im
   - DOMAIN-SUFFIX,pts.org.tw
+  - DOMAIN-SUFFIX,ptt.best
   - DOMAIN-SUFFIX,ptt.cc
   - DOMAIN-SUFFIX,pttgame.com
   - DOMAIN-SUFFIX,pttvan.org
