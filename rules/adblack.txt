@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年02月23日05:15:15
-# 数量: 106031条
+# 更新: 2026年02月24日05:35:03
+# 数量: 106030条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,0014b04291.com
@@ -74377,7 +74377,6 @@ DOMAIN-SUFFIX,bugly.qq.com
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,cfg.imtt.qq.com
 DOMAIN-SUFFIX,commdata.v.qq.com
-DOMAIN-SUFFIX,d3g.qq.com
 DOMAIN-SUFFIX,data.qq.com
 DOMAIN-SUFFIX,detect.mb.qq.com
 DOMAIN-SUFFIX,dp3.qq.com
