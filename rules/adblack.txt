@@ -1,6 +1,6 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年02月24日05:35:03
+# 更新: 2026年02月25日05:25:12
 # 数量: 106030条
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -93873,7 +93873,7 @@ DOMAIN-SUFFIX,user-api.com
 DOMAIN-SUFFIX,user-clicks.com
 DOMAIN-SUFFIX,user-red.com
 DOMAIN-SUFFIX,userballot.com
-DOMAIN-SUFFIX,usercentrics.eu
+DOMAIN-SUFFIX,uct.service.usercentrics.eu
 DOMAIN-SUFFIX,usercycle.com
 DOMAIN-SUFFIX,userdatatrust.com
 DOMAIN-SUFFIX,userdive.com
