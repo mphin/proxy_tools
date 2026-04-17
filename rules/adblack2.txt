@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年04月17日05:34:29
-# 数量: 108540条
+# 更新: 2026年04月18日05:33:03
+# 数量: 108538条
 .000491b06a.com
 .000dn.com
 .0013.cc
@@ -87485,7 +87485,6 @@
 .sysad.cn
 .ss.sysadult.cn
 .metrics.sysco.com
-.sysdig.com
 .eloqua.syslog-ng.com
 .plausible.sysloun.cz
 .sysmeasuring.net
@@ -108164,7 +108163,6 @@
 .ad.zuimeitianqi.com
 .bd1.zuimeitianqi.com
 .bd2.zuimeitianqi.com
-.hw.zuimeitianqi.com
 .hwad.zuimeitianqi.com
 .stat.zuimeitianqi.com
 .zuingdqirviqy.website
