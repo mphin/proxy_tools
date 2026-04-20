@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年04月20日05:26:14
-# 数量: 106465条
+# 更新: 2026年04月21日05:37:55
+# 数量: 106466条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -17776,6 +17776,7 @@ DOMAIN-SUFFIX,ponyo.cheriefm.fr
 DOMAIN-SUFFIX,utiq.cheriefm.fr
 DOMAIN-SUFFIX,cherriescare.com
 DOMAIN-SUFFIX,cherriesprospectsfaith.com
+DOMAIN-SUFFIX,analytics.cherry-ai.com
 DOMAIN-SUFFIX,cherrya04.top
 DOMAIN-SUFFIX,cherrytv.media
 DOMAIN-SUFFIX,dxrkvm.cheryls.com

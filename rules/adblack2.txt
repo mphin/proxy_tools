@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年04月20日05:26:14
-# 数量: 106465条
+# 更新: 2026年04月21日05:37:55
+# 数量: 106466条
 .000491b06a.com
 .000dn.com
 .0013.cc
@@ -17776,6 +17776,7 @@
 .utiq.cheriefm.fr
 .cherriescare.com
 .cherriesprospectsfaith.com
+.analytics.cherry-ai.com
 .cherrya04.top
 .cherrytv.media
 .dxrkvm.cheryls.com
