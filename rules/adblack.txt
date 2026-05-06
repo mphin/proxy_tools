@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年05月05日05:52:45
-# 数量: 107555条
+# 更新: 2026年05月07日05:50:59
+# 数量: 107556条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -5078,6 +5078,7 @@ DOMAIN-SUFFIX,info.admtech.com.au
 DOMAIN-SUFFIX,trk.admtoronto.com
 DOMAIN-SUFFIX,admtpmp124.com
 DOMAIN-SUFFIX,admulti.com
+DOMAIN-SUFFIX,adn-plus.com.cn
 DOMAIN-SUFFIX,logging.pw.adn.cloud
 DOMAIN-SUFFIX,tags.pw.adn.cloud
 DOMAIN-SUFFIX,adnade.net
