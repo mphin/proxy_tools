@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年05月11日05:38:45
-# 数量: 106542条
+# 更新: 2026年05月13日06:03:35
+# 数量: 106541条
 .000491b06a.com
 .000dn.com
 .0013.cc
@@ -33459,7 +33459,6 @@
 .figpii.com
 .figqiqdhirid.in
 .to.figr.me
-.figshare.com
 .figsprotein.com
 .figuredworrying.com
 .figurehunter.net
