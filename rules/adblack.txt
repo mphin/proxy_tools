@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年05月26日06:01:37
-# 数量: 106196条
+# 更新: 2026年05月27日06:14:10
+# 数量: 106199条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -32650,6 +32650,7 @@ DOMAIN-SUFFIX,f308e80f54.com
 DOMAIN-SUFFIX,f30fpad7.xyz
 DOMAIN-SUFFIX,f34aabcc0e.com
 DOMAIN-SUFFIX,f351966262.com
+DOMAIN-SUFFIX,f3531.top
 DOMAIN-SUFFIX,f3k194f9i7.com
 DOMAIN-SUFFIX,f418509b38.com
 DOMAIN-SUFFIX,f435ee855c.com
@@ -81721,6 +81722,8 @@ DOMAIN-SUFFIX,temai.snssdk.com
 DOMAIN-SUFFIX,toutiao-frontier.snssdk.com
 DOMAIN-SUFFIX,xlog.snssdk.com
 DOMAIN-SUFFIX,gecko.snssdk.com
+DOMAIN-SUFFIX,applog.snssdk.com
+DOMAIN-SUFFIX,os-mon.snssdk.com
 DOMAIN-SUFFIX,snsv.ru
 DOMAIN-SUFFIX,snta0034.com
 DOMAIN-SUFFIX,sntjim.com
