@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年06月11日06:47:01
-# 数量: 103522条
+# 更新: 2026年06月12日06:46:33
+# 数量: 103521条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -36059,7 +36059,6 @@ DOMAIN-SUFFIX,g--o.info
 DOMAIN-SUFFIX,smetrics.g-shock.com
 DOMAIN-SUFFIX,smetrics.g-shock.jp
 DOMAIN-SUFFIX,smetrics.g-tune.jp
-DOMAIN-SUFFIX,xyoss.g.com.cn
 DOMAIN-SUFFIX,g0-g3t-msg.net
 DOMAIN-SUFFIX,g0gr67p.de
 DOMAIN-SUFFIX,g10102301085.co

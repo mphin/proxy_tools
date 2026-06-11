@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年06月11日06:47:01
-# 数量: 103522条
+# 更新: 2026年06月12日06:46:33
+# 数量: 103521条
 .000491b06a.com
 .000dn.com
 .0013.cc
@@ -36059,7 +36059,6 @@
 .smetrics.g-shock.com
 .smetrics.g-shock.jp
 .smetrics.g-tune.jp
-.xyoss.g.com.cn
 .g0-g3t-msg.net
 .g0gr67p.de
 .g10102301085.co
