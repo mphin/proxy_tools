@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年06月12日06:46:33
-# 数量: 103521条
+# 更新: 2026年06月13日06:17:51
+# 数量: 103520条
 .000491b06a.com
 .000dn.com
 .0013.cc
@@ -11290,7 +11290,6 @@
 .cstm.baidu.com
 .datax.baidu.com
 .dl.ops.baidu.com
-.dlswbr.baidu.com
 .dxp.baidu.com
 .eclick.baidu.com
 .eduad.baidu.com

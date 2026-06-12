@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年06月12日06:46:33
-# 数量: 103521条
+# 更新: 2026年06月13日06:17:51
+# 数量: 103520条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -11290,7 +11290,6 @@ DOMAIN-SUFFIX,crs.baidu.com
 DOMAIN-SUFFIX,cstm.baidu.com
 DOMAIN-SUFFIX,datax.baidu.com
 DOMAIN-SUFFIX,dl.ops.baidu.com
-DOMAIN-SUFFIX,dlswbr.baidu.com
 DOMAIN-SUFFIX,dxp.baidu.com
 DOMAIN-SUFFIX,eclick.baidu.com
 DOMAIN-SUFFIX,eduad.baidu.com
