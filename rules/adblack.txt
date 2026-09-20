@@ -1,6 +1,6 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年09月20日06:34:36
+# 更新: 2026年09月21日06:47:14
 # 数量: 100819条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
@@ -85921,7 +85921,7 @@ DOMAIN-SUFFIX,transactionscookclotted.com
 DOMAIN-SUFFIX,hnibej.transat.com
 DOMAIN-SUFFIX,tck.fr.transavia.com
 DOMAIN-SUFFIX,tk.transavia.com
-DOMAIN-SUFFIX,transcend.io
+DOMAIN-SUFFIX,telemetry.transcend.io
 DOMAIN-SUFFIX,info.transcontinental-printing.com
 DOMAIN-SUFFIX,marketing.transcore.com
 DOMAIN-SUFFIX,transferfaciliate.com
