@@ -61,6 +61,8 @@ DOMAIN-SUFFIX,007.tg
 # > Adguard
 DOMAIN-SUFFIX,adtidy.org
 DOMAIN-SUFFIX,d.adguard-dns.com
+# > 网盘
+DOMAIN-SUFFIX,mypikpak.com
 
 # 域名服务
 DOMAIN-SUFFIX,godaddy.com
