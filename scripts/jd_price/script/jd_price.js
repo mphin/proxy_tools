@@ -164,6 +164,13 @@ function add(arg1, arg2) {
 }
 
 function request_history_price(share_url, callback) {
+    // Only forward well-formed JD.com share links to the third-party price-history
+    // API; refuse to transmit anything else to avoid leaking unexpected/sensitive data.
+    if (typeof share_url != "string" || !/^https:\/\/([a-zA-Z0-9-]+\.)*jd\.com\//i.test(share_url)) {
+        if (consolelog) console.log("Rejected share_url, not a jd.com link:\n" + share_url);
+        callback(null, null);
+        return;
+    }
     const options = {
         url: "https://apapia-history.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx",
         headers: {
