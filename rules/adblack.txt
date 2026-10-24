@@ -1,7 +1,7 @@
 # 内容: 🚫 广告过滤 规则集
 # 备注: 以anti-AD为基础，添加自用规则，原作者: https://anti-ad.net/
-# 更新: 2026年10月23日07:46:16
-# 数量: 104535条
+# 更新: 2026年10月25日06:46:45
+# 数量: 104534条
 DOMAIN-SUFFIX,000491b06a.com
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
@@ -47161,7 +47161,6 @@ DOMAIN-SUFFIX,iyykxvzgtxuyq.space
 DOMAIN-SUFFIX,t.iz55.com
 DOMAIN-SUFFIX,e.izaos.com
 DOMAIN-SUFFIX,m.izaos.com
-DOMAIN-SUFFIX,izatcloud.net
 DOMAIN-SUFFIX,izavjtqqznucm.site
 DOMAIN-SUFFIX,izaybwqvajljf.space
 DOMAIN-SUFFIX,izccryctmxtwb.website
